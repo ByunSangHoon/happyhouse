@@ -37,6 +37,7 @@
     <script async="" type="text/javascript" id="i2p-extension"
             src="./Grid Template for Bootstrap_files/imideo.js"></script>
     <style type="text/css"></style>
+    <script type="text/javascript" src="/static/js/Chart.min.js"></script>
 </head>
 
 <body>
@@ -57,62 +58,19 @@
         <col class="col-xs-7">
 
         <tbody>
+
+        {% for field in form %}
         <tr>
-          <th scope="row">
-            <code>ResidentName</code>
+           <th scope="row">
+            <code>{{ field.label_tag }}</code>
           </th>
-          <td>{{form.resident_name}}</td>
+          <td>{{ field }}</td>
         </tr>
-        <tr>
-          <th scope="row">
-            <code>RoomType</code>
-          </th>
-          <td>{{form.room_type}}</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <code>입실일</code>
-          </th>
-          <td>{{form.check_in_time}}</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <code>{% if info.is_usable %}
-             사용중
-                    {% else %}
-             빈방
-                    {%endif%}</code>
-          </th>
-          <td>{{form.is_usable}}</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <code>국적</code>
-          </th>
-          <td>{{form.nationality}}</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <code>생일</code>
-          </th>
-          <td>{{form.birth}}</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <code>전화번호</code>
-          </th>
-          <td>{{form.ph_number}}</td>
-        </tr>
-        <tr>
-          <th scope="row">
-            <code>직업</code>
-          </th>
-          <td>{{form.job}}</td>
-        </tr>
-        </tbody>
+        {% endfor %}
+       </tbody>
  </colgroup>
     </table>
-
+<input type="submit" value="전송">
 <button type="submit" class="btn btn-primary">확인</button>
 
     </form>
@@ -123,7 +81,6 @@
 
     <br>
     <br>
-
 
 
 
