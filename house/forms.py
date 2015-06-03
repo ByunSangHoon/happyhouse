@@ -21,7 +21,7 @@ class ClientInfoDetailForm(forms.ModelForm):
     def clean_ph_number(self):
         data = self.cleaned_data.get('ph_number', False)
         if not data:
-            raise forms.ValidationError('핸드폰번호에서 에러가 났습니다.');
+            raise forms.ValidationError('핸드폰번호에서 에러가 났습니다.')
 
         return data
 
@@ -36,7 +36,7 @@ class ClientInfoDetailForm(forms.ModelForm):
     def clean_resident_name(self):
         data = self.cleaned_data.get('resident_name', False)
         if not data:
-            raise forms.ValidationError('거주자 이름에서 에러가 났습니다.');
+            raise forms.ValidationError('거주자 이름에서 에러가 났습니다.')
 
         return data
 
